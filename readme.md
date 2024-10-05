@@ -15,3 +15,9 @@ java demo/src/main/java/com/bancodo/Main.java
 cd demo
 mvn package
 ```
+
+Ejecutarlo:
+
+```bash
+java -jar <Ruta al archivo .jar distribuible>
+```

@@ -31,3 +31,10 @@ release.properties
 *.zip
 *.tar.gz
 *.rar
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
