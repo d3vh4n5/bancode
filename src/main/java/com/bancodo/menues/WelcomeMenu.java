@@ -1,10 +1,17 @@
 package com.bancodo.menues;
 
-import com.bancodo.classes.Auth;
+import com.bancodo.classes.*;
 import com.bancodo.helpers.Console;
 
 public class WelcomeMenu {
     public static void menu(){
+
+        try {
+            Animation.load(); // Como esta tiene un throws, la controlo acá
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
         System.out.println("""
             **********************************
             *                                *
@@ -33,8 +40,7 @@ public class WelcomeMenu {
                 backToMenu();
                 return;
             case "0":
-                System.out.println("Finalizando programa...");
-                System.exit(0);
+                Animation.close();
                 return;
             default:
                 menu();
@@ -52,7 +58,7 @@ public class WelcomeMenu {
                 menu();
                 break;
             case "0":
-                System.exit(0);;
+                Animation.close();
                 break;
         
             default:

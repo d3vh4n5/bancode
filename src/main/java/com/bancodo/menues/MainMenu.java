@@ -1,5 +1,6 @@
 package com.bancodo.menues;
 
+import com.bancodo.classes.Animation;
 import com.bancodo.helpers.Console;
 import com.bancodo.models.User;
 
@@ -46,9 +47,7 @@ public class MainMenu {
                 backToMenu();
                 break;
             case "0":
-                Console.clean();
-                System.out.println("Finalizado programa...");
-                System.exit(0);
+                Animation.close();
                 return;
         
             default:
@@ -67,7 +66,7 @@ public class MainMenu {
                 menu();
                 break;
             case "0":
-                System.exit(0);;
+                Animation.close();
                 break;
         
             default:

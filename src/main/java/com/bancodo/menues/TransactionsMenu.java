@@ -1,5 +1,6 @@
 package com.bancodo.menues;
 
+import com.bancodo.classes.Animation;
 import com.bancodo.helpers.Console;
 import com.bancodo.models.Contact;
 import com.bancodo.models.User;
@@ -34,7 +35,7 @@ public class TransactionsMenu {
                 MainMenu.menu();
                 break;
             case "0":
-                System.exit(0);
+                Animation.close();
                 break;
         
             default:
@@ -118,7 +119,7 @@ public class TransactionsMenu {
                 menu();
                 break;
             case "0":
-                System.exit(0);;
+                Animation.close();
                 break;
         
             default:
