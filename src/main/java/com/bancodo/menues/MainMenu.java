@@ -51,10 +51,16 @@ public class MainMenu {
                 return;
         
             default:
-                System.out.println("Opcion incorrecta, vuelva a intentar");
-                menu();
+                handleBadOpction();
                 break;
         }
+    }
+
+    public static void handleBadOpction(){
+        Console.clean();
+        System.out.println("Opcion incorrecta, vuelva a intentar");
+        Console.textInput("Presione una tecla para continuar..");
+        menu();
     }
 
     public static void backToMenu() {
@@ -70,6 +76,7 @@ public class MainMenu {
                 break;
         
             default:
+                handleBadOpction();
                 break;
         }
     }

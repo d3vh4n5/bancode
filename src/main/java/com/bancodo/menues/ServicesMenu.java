@@ -33,8 +33,7 @@ public class ServicesMenu {
                 break;
         
             default:
-                System.out.println("Opcion incorrecta, vuelva a intentar");
-                menu();
+                handleBadOpction();
                 break;
         }
     }
@@ -71,8 +70,7 @@ public class ServicesMenu {
                 return;
     
             default:
-                System.out.println("Opcion incorrecta, vuelva a intentar");
-                menu();
+                handleBadOpction();
                 return;
         }
     }
@@ -94,6 +92,13 @@ public class ServicesMenu {
         }
     }
 
+    public static void handleBadOpction(){
+        Console.clean();
+        System.out.println("Opcion incorrecta, vuelva a intentar");
+        Console.textInput("Presione una tecla para continuar..");
+        menu();
+    }
+
     public static void backToMenu() {
         System.out.println("1) Volver");
         System.out.println("0) Salir");
@@ -107,6 +112,7 @@ public class ServicesMenu {
                 break;
         
             default:
+                handleBadOpction();
                 break;
         }
     }

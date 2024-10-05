@@ -35,6 +35,7 @@ public class Animation {
         }
         System.out.println("\r*** EL SISTEMA SE HA CERRADO CORRECTAMENTE ***          "); // Mensaje final de cierre.
         System.out.println("");
+        Console.close();
         System.exit(0);
     }
 

@@ -43,10 +43,16 @@ public class WelcomeMenu {
                 Animation.close();
                 return;
             default:
-                menu();
-                System.out.println("Opción inválida");
+                handleBadOpction();
                 return;
         }
+    }
+
+    public static void handleBadOpction(){
+        Console.clean();
+        System.out.println("Opcion incorrecta, vuelva a intentar");
+        Console.textInput("Presione una tecla para continuar..");
+        menu();
     }
 
     public static void backToMenu(){
@@ -62,6 +68,7 @@ public class WelcomeMenu {
                 break;
         
             default:
+                handleBadOpction();
                 break;
         }
     }

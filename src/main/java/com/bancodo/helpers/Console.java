@@ -1,5 +1,6 @@
 package com.bancodo.helpers;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.io.IOException;
 
@@ -20,7 +21,7 @@ public class Console {
                 double number = scanner.nextDouble();
                 return number;
             }
-            catch (Exception err) {
+            catch (InputMismatchException err) {
                 System.out.println("Por favor, ingresa un número decimal válido.");
             } finally {
                 scanner.nextLine(); // limpio buffer
@@ -29,10 +30,18 @@ public class Console {
     }
 
     public static int intInput(String msg){
-        System.out.println(msg);
-        int number = scanner.nextInt();
-        scanner.nextLine(); // limpio buffer
-        return number;
+        while (true){
+            try {
+                System.out.println(msg);
+                int number = scanner.nextInt();
+                scanner.nextLine(); // limpio buffer
+                return number;
+            } catch (InputMismatchException e) {
+                System.out.println("Por favor, ingresa un número entero válido.");
+                scanner.nextLine(); // limpio buffer
+            }
+            
+        }
     }
 
     public static void close(){
