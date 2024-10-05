@@ -4,7 +4,7 @@ import com.bancodo.classes.Animation;
 import com.bancodo.helpers.Console;
 import com.bancodo.models.User;
 
-public class MainMenu {
+public class MainMenu extends Menu{
 
     public static void menu(){
         String option;
@@ -29,54 +29,29 @@ public class MainMenu {
             case "1":
                 Console.clean();
                 User.accInfo();
-                backToMenu();
+                backToMenu(MainMenu::menu);
                 break;
             case "2":
                 Console.clean();
                 System.out.println("Su saldo actual es: " + User.getAccBalance());
-                backToMenu();
+                backToMenu(MainMenu::menu);
                 break;
             case "3":
                 Console.clean();
                 TransactionsMenu.menu();
-                backToMenu();
+                backToMenu(MainMenu::menu);
                 break;
             case "4":
                 Console.clean();
                 ServicesMenu.menu();
-                backToMenu();
+                backToMenu(MainMenu::menu);
                 break;
             case "0":
                 Animation.close();
                 return;
         
             default:
-                handleBadOpction();
-                break;
-        }
-    }
-
-    public static void handleBadOpction(){
-        Console.clean();
-        System.out.println("Opcion incorrecta, vuelva a intentar");
-        Console.textInput("Presione una tecla para continuar..");
-        menu();
-    }
-
-    public static void backToMenu() {
-        System.out.println("1) Volver");
-        System.out.println("0) Salir");
-
-        switch (Console.textInput("Ingrese una opcion..")) {
-            case "1":
-                menu();
-                break;
-            case "0":
-                Animation.close();
-                break;
-        
-            default:
-                handleBadOpction();
+                handleBadOption(MainMenu::menu);
                 break;
         }
     }

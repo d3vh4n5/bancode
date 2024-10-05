@@ -3,7 +3,7 @@ package com.bancodo.menues;
 import com.bancodo.classes.*;
 import com.bancodo.helpers.Console;
 
-public class WelcomeMenu {
+public class WelcomeMenu extends Menu{
     public static void menu(){
 
         try {
@@ -37,39 +37,14 @@ public class WelcomeMenu {
                         Para ver el código fuente o contactar al desarrollador acceda al siguiente link: https://github.com/d3vh4n5/bancode
 
                         """);
-                backToMenu();
+                backToMenu(WelcomeMenu::menu);
                 return;
             case "0":
                 Animation.close();
                 return;
             default:
-                handleBadOpction();
+                handleBadOption(WelcomeMenu::menu);
                 return;
-        }
-    }
-
-    public static void handleBadOpction(){
-        Console.clean();
-        System.out.println("Opcion incorrecta, vuelva a intentar");
-        Console.textInput("Presione una tecla para continuar..");
-        menu();
-    }
-
-    public static void backToMenu(){
-        System.out.println("1) Volver");
-        System.out.println("0) Salir");
-
-        switch (Console.textInput("Ingrese una opcion..")) {
-            case "1":
-                menu();
-                break;
-            case "0":
-                Animation.close();
-                break;
-        
-            default:
-                handleBadOpction();
-                break;
         }
     }
 }

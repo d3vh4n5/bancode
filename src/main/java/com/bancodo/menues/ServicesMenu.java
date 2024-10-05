@@ -5,7 +5,7 @@ import com.bancodo.helpers.Console;
 import com.bancodo.models.Service;
 import com.bancodo.models.User;
 
-public class ServicesMenu {
+public class ServicesMenu extends Menu{
 
     public static void menu(){
         String option;
@@ -33,7 +33,7 @@ public class ServicesMenu {
                 break;
         
             default:
-                handleBadOpction();
+                handleBadOption(ServicesMenu::menu);
                 break;
         }
     }
@@ -70,7 +70,7 @@ public class ServicesMenu {
                 return;
     
             default:
-                handleBadOpction();
+                handleBadOption(ServicesMenu::menu);
                 return;
         }
     }
@@ -89,31 +89,6 @@ public class ServicesMenu {
             System.out.println("Pago realizado con exito");
             Console.textInput("Presione una tecla para continuar..");
             MainMenu.menu();
-        }
-    }
-
-    public static void handleBadOpction(){
-        Console.clean();
-        System.out.println("Opcion incorrecta, vuelva a intentar");
-        Console.textInput("Presione una tecla para continuar..");
-        menu();
-    }
-
-    public static void backToMenu() {
-        System.out.println("1) Volver");
-        System.out.println("0) Salir");
-
-        switch (Console.textInput("Ingrese una opcion..")) {
-            case "1":
-                menu();
-                break;
-            case "0":
-                Animation.close();
-                break;
-        
-            default:
-                handleBadOpction();
-                break;
         }
     }
 }

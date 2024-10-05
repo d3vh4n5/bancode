@@ -5,7 +5,7 @@ import com.bancodo.helpers.Console;
 import com.bancodo.models.Contact;
 import com.bancodo.models.User;
 
-public class TransactionsMenu {
+public class TransactionsMenu extends Menu {
 
     public static void menu(){
         String option;
@@ -39,16 +39,9 @@ public class TransactionsMenu {
                 break;
         
             default:
-                handleBadOpction();
+                handleBadOption(TransactionsMenu::menu);
                 break;
         }
-    }
-
-    public static void handleBadOpction(){
-        Console.clean();
-        System.out.println("Opcion incorrecta, vuelva a intentar");
-        Console.textInput("Presione una tecla para continuar..");
-        menu();
     }
 
     public static void contactList(){
@@ -83,7 +76,7 @@ public class TransactionsMenu {
                 return;
     
             default:
-                handleBadOpction();
+                handleBadOption(TransactionsMenu::menu);
                 return;
         }
     }
@@ -113,23 +106,5 @@ public class TransactionsMenu {
         Contact.addContact(name, cbu);
         Console.textInput("Presione una tecla para continuar...");
         menu();
-    }
-
-    public static void backToMenu() {
-        System.out.println("1) Volver");
-        System.out.println("0) Salir");
-
-        switch (Console.textInput("Ingrese una opcion..")) {
-            case "1":
-                menu();
-                break;
-            case "0":
-                Animation.close();
-                break;
-        
-            default:
-                handleBadOpction();
-                break;
-        }
     }
 }
