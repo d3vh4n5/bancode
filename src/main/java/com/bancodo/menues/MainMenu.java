@@ -33,7 +33,7 @@ public class MainMenu extends Menu{
                 break;
             case "2":
                 Console.clean();
-                System.out.println("Su saldo actual es: " + User.getAccBalance());
+                System.out.println("Su saldo actual es: " + User.getAccBalance() + "\n");
                 backToMenu(MainMenu::menu);
                 break;
             case "3":

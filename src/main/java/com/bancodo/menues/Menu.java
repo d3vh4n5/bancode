@@ -16,6 +16,7 @@ abstract class Menu {
     public static void backToMenu(MenuAction menuCallback) {
         System.out.println("1) Volver");
         System.out.println("0) Salir");
+        System.out.println("");
 
         switch (Console.textInput("Ingrese una opcion..")) {
             case "1":

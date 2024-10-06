@@ -39,8 +39,10 @@ public class User {
 
     public static void accInfo(){
         Console.clean();
+        System.out.println("Información de la cuenta: \n");
         System.out.println("Usuario: " + users[currentUser]);
         System.out.println("DNI:     " + dnis[currentUser]);
         System.out.println("Saldo:   " + accBalances[currentUser]);
+        System.out.println("\n");
     }
 }

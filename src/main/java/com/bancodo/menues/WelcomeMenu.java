@@ -28,6 +28,7 @@ public class WelcomeMenu extends Menu{
                 Auth.login();
                 return;
             case "2":
+                Console.clean();
                 System.out.println("""
                         Para un usuario de pruebas puede usar:
 
