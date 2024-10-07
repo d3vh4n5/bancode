@@ -1,9 +1,9 @@
 package com.bancodo;
 
-import com.bancodo.menues.WelcomeMenu;
+import com.bancodo.helpers.ApplicationBootstrapper;
 
 public class Main {
     public static void main(String[] args) {
-        WelcomeMenu.menu();
+        ApplicationBootstrapper.bootstrap();
     }
 }

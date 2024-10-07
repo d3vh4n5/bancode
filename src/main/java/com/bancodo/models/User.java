@@ -1,13 +1,14 @@
 package com.bancodo.models;
 
 import com.bancodo.helpers.*;
+import com.bancodo.classes.FileManager;
 
 public class User {
     private static int currentUser;
-    public static String[] users = {"Juan Basgall", "Marcos Goyete", "Mateo Ferrari"};
-    public static double accBalances[] = {100000, 150000, 200000};
-    public static String[] dnis = {"12345678", "23456789", "45632187"};
-    public static String keys[] = {"1234", "4321", "1324"}; 
+    public static String[] users = FileManager.readArray("users");
+    public static double accBalances[] = FileManager.readDouble("accBalances");
+    public static String[] dnis = FileManager.readArray("dnis");
+    public static String keys[] = FileManager.readArray("keys"); 
     
     public static boolean validate(String dni, String password){
 
@@ -44,5 +45,16 @@ public class User {
         System.out.println("DNI:     " + dnis[currentUser]);
         System.out.println("Saldo:   " + accBalances[currentUser]);
         System.out.println("\n");
+    }
+
+    public static void generateDemoFiles(){
+        String[] users = {"Juan Basgall", "Marcos Goyete", "Mateo Ferrari"};
+        double accBalances[] = {100000, 150000, 200000};
+        String[] dnis = {"12345678", "23456789", "45632187"};
+        String keys[] = {"1234", "4321", "1324"}; 
+        FileManager.save("users", users);
+        FileManager.save("accBalances", accBalances);
+        FileManager.save("dnis", dnis);
+        FileManager.save("keys", keys);
     }
 }
