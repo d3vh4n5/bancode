@@ -16,7 +16,7 @@ public class ApplicationBootstrapper {
 
     public static void generateDemoFiles(){
         System.out.println("Generando archivos de prueba....");
-        String[] users = {"Juan Basgall", "Marcos Goyete", "Mateo Ferrari"};
+        String[] users = {"Gordon Freeman", "Marcos Goyete", "Mateo Ferrari"};
         double accBalances[] = {100000, 150000, 200000};
         String[] dnis = {"12345678", "23456789", "45632187"};
         String keys[] = {"1234", "4321", "1324"}; 
