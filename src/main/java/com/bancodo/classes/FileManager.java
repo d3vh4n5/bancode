@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 public class FileManager implements Serializable {
-    private static String basePath = "src/main/java/com/bancodo/data/";
+    private static String basePath = "data/";
 
     public static boolean directoryExists(){
         try {
@@ -15,6 +15,22 @@ public class FileManager implements Serializable {
                 file.mkdirs();
                 return true;
             }
+        } catch (Exception e) {
+            System.out.println("Error al checkear el directorio de datos");
+            return false;
+        }
+    }
+
+    public static boolean dataFilesExists(){
+        try {
+            String[] fileNames = {"dnis", "accBalances", "keys", "users"};
+            for (String fileName : fileNames) {
+                File file = new File(basePath + fileName + ".dat");
+                if (!file.exists()) {
+                    return false;
+                }
+            }
+            return true;
         } catch (Exception e) {
             System.out.println("Error al checkear el directorio de datos");
             return false;
