@@ -31,11 +31,13 @@ public class WelcomeMenu extends Menu{
                 Console.clean();
                 System.out.println("""
                         Para un usuario de pruebas puede usar:
-
                         DNI: 12345678
                         pass: 1234
 
-                        Para ver el código fuente o contactar al desarrollador acceda al siguiente link: https://github.com/d3vh4n5/bancode
+                        Para ver el código fuente o contactar al desarrollador acceda al siguiente link: 
+                        https://github.com/d3vh4n5/bancode
+
+                        Para resetear los archivos de pruba, simplemente elimine la carpeta "data"
 
                         """);
                 backToMenu(WelcomeMenu::menu);
