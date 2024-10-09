@@ -35,7 +35,6 @@ java src/main/java/com/bancodo/Main.java
 
 
 ```bash
-cd demo
 mvn package
 ```
 
